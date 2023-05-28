@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Heading, Pane, Text } from "evergreen-ui";
+import { Heading, Pane, Text, Tooltip } from "evergreen-ui";
 import { categorizedRoutes, Route } from "@utils/routes";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -76,15 +76,11 @@ export default function Navigator() {
         })}
       </Pane>
 
-      <Pane borderTop>
-        <Image src="/public/logo-goldenrote.jpg" width={500} height={180} />
-        <Heading size={400} paddingY={15} textAlign="center">
-          Created by{" "}
-          <a href="https://twitter.com/ritz078" target="_blank">
-            @ritz078
-          </a>
-        </Heading>
-      </Pane>
+      <Tooltip content="צוות נתיב הזהב">
+        <Pane borderTop display="flex" justifyContent="center">
+          <Image src="/logo-goldenrote.png" width={100} height={100} />
+        </Pane>
+      </Tooltip>
     </Pane>
   );
 }
